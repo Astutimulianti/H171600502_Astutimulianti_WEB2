@@ -15,4 +15,25 @@ class KategoriGaleriController extends Controller
     return view('kategori_galeri.index', compact('listKategoriGaleri'));
     //return view(view: 'kategori_galeri.index')->with('data',$listKategoriGaleri);
 	}
+
+	public function show($id) {
+	//Eloquent
+	//$KategoriGaleri=KategoriGaleri::('id','$id')->first(); // select * from Kategori galeri where id=$id limit 1
+	$KategoriGaleri=KategoriGaleri::find($id);
+
+	return view ( 'kategori_galeri.show',compact( 'KategoriGaleri'));
+}
+
+public function create(){
+		return view( 'kategori_galeri.create');
+	}
+
+		public function store(Request $request){
+		$input= $request->all();
+
+		KategoriGaleri::create($input);
+
+		return redirect(route('kategori_galeri.index'));
+
+	}
 }

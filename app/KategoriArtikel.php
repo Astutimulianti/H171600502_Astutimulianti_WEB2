@@ -13,6 +13,7 @@ class KategoriArtikel extends Model
     ];
 
     protected $casts=[
-
+    	
     ];
 }
+

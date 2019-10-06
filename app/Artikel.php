@@ -13,6 +13,7 @@ class Artikel extends Model
     ];
 
     protected $casts=[
-
+    	
     ];
 }
+
